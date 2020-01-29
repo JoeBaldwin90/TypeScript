@@ -1,4 +1,8 @@
-function GetAllBooks(): object[] {
+import { Category } from './enums';
+import { Book } from './interfaces';
+
+// Returned array type is declared by the imported interface
+function GetAllBooks(): Book[] {
     let books = [{
             id: 1, 
             title: 'Kobe',
@@ -46,9 +50,6 @@ function LogFirstAvailable(books = GetAllBooks()): void {
     console.log(`First available: ${firstAvailable}`);
 }
 
-// Enum
-enum Category { Biography, Poetry, Fiction, History, Science}
-
 // Default function parameter values & declarative return type. 
 function GetBookTitlesByCategory(categoryFilter: Category = Category.Fiction): Array<string> {
 
@@ -72,8 +73,8 @@ function LogBookTitles(titles: string[]): void {
     }
 }
 
-// Returns an object
-function GetBookById(id: number): object {
+// Returns a Book object
+function GetBookById(id: number): Book {
     const allBooks = GetAllBooks();    
     return allBooks.filter(book => book.id === id)[0];
 }
@@ -138,8 +139,29 @@ function GetTitles(bookProperty: any): string[] {
     return foundTitles;
 }
 
+// Use Interface with function
+function PrintBook(book: Book): void {
+    console.log(`${book.title} by ${book.author}`);
+}
+
 
 // *******************************
+
+// Duck typing in action. myBook contains all keys (and more) of the Interface
+let myBook = {
+    id: 5,
+    title: `Lillith's Brood`,
+    author: 'Octavia Butler',
+    available: true,
+    category: Category.Fiction,             // Imported Category type from enum
+    year: '1813',
+    pages: 376,
+    markDamaged: (reason: string) => console.log(`Damaged: ${reason}`)
+    
+}
+
+PrintBook(myBook);
+myBook.markDamaged('Spine glue failed')
 
 // // Overload string
 // let joesBooks = GetTitles('joe bloggs')

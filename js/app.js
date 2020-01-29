@@ -1,31 +1,35 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var enums_1 = require("./enums");
+// Returned array type is declared by the imported interface
 function GetAllBooks() {
     var books = [{
             id: 1,
             title: 'Kobe',
             author: 'jane doe',
             available: false,
-            category: Category.Biography
+            category: enums_1.Category.Biography
         },
         {
             id: 2,
             title: 'Dune',
             author: 'joe bloggs',
             available: true,
-            category: Category.Fiction
+            category: enums_1.Category.Fiction
         },
         {
             id: 3,
             title: 'Solaris',
             author: 'mr smith',
             available: true,
-            category: Category.Fiction
+            category: enums_1.Category.Fiction
         },
         {
             id: 4,
             title: 'Tao Te Ching',
             author: 'hacker',
             available: false,
-            category: Category.Poetry
+            category: enums_1.Category.Poetry
         }
     ];
     return books;
@@ -45,19 +49,10 @@ function LogFirstAvailable(books) {
     console.log("Total books: " + numberOfBooks);
     console.log("First available: " + firstAvailable);
 }
-// Enum
-var Category;
-(function (Category) {
-    Category[Category["Biography"] = 0] = "Biography";
-    Category[Category["Poetry"] = 1] = "Poetry";
-    Category[Category["Fiction"] = 2] = "Fiction";
-    Category[Category["History"] = 3] = "History";
-    Category[Category["Science"] = 4] = "Science";
-})(Category || (Category = {}));
 // Default function parameter values & declarative return type. 
 function GetBookTitlesByCategory(categoryFilter) {
-    if (categoryFilter === void 0) { categoryFilter = Category.Fiction; }
-    console.log("Getting books in category: " + Category[categoryFilter]);
+    if (categoryFilter === void 0) { categoryFilter = enums_1.Category.Fiction; }
+    console.log("Getting books in category: " + enums_1.Category[categoryFilter]);
     var allBooks = GetAllBooks();
     var filteredTitles = [];
     for (var _i = 0, allBooks_1 = allBooks; _i < allBooks_1.length; _i++) {
@@ -75,7 +70,7 @@ function LogBookTitles(titles) {
         console.log(title);
     }
 }
-// Returns an object
+// Returns a Book object
 function GetBookById(id) {
     var allBooks = GetAllBooks();
     return allBooks.filter(function (book) { return book.id === id; })[0];
@@ -134,7 +129,24 @@ function GetTitles(bookProperty) {
     }
     return foundTitles;
 }
+// Use Interface with function
+function PrintBook(book) {
+    console.log(book.title + " by " + book.author);
+}
 // *******************************
+// Duck typing in action. myBook contains all keys (and more) of the Interface
+var myBook = {
+    id: 5,
+    title: "Lillith's Brood",
+    author: 'Octavia Butler',
+    available: true,
+    category: enums_1.Category.Fiction,
+    year: '1813',
+    pages: 376,
+    markDamaged: function (reason) { return console.log("Damaged: " + reason); }
+};
+PrintBook(myBook);
+myBook.markDamaged('Spine glue failed');
 // // Overload string
 // let joesBooks = GetTitles('joe bloggs')
 // joesBooks.forEach(title => console.log(title));
