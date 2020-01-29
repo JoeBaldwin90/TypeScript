@@ -1,5 +1,6 @@
 import { Category } from './enums';
 import { Book, DamageLogger, Person, Author, Librarian } from './interfaces';
+import { UniversityLibrarian } from './classes';
 
 // Returned array type is declared by the imported interface
 function GetAllBooks(): Book[] {
@@ -146,6 +147,10 @@ function PrintBook(book: Book): void {
 
 
 // *******************************
+
+let favoriteLibrarian: Librarian = new UniversityLibrarian();
+favoriteLibrarian.name = 'Sharon';
+favoriteLibrarian.assistCustomer('Joe');
 
 // let favoriteAuthor: Author = {}             // ctrl+space to see interfaces
 // let favoriteLibrarian: Librarian = {}       // ctrl+space to see interfaces

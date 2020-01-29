@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var enums_1 = require("./enums");
+var classes_1 = require("./classes");
 // Returned array type is declared by the imported interface
 function GetAllBooks() {
     var books = [{
@@ -134,6 +135,9 @@ function PrintBook(book) {
     console.log(book.title + " by " + book.author);
 }
 // *******************************
+var favoriteLibrarian = new classes_1.UniversityLibrarian();
+favoriteLibrarian.name = 'Sharon';
+favoriteLibrarian.assistCustomer('Joe');
 // let favoriteAuthor: Author = {}             // ctrl+space to see interfaces
 // let favoriteLibrarian: Librarian = {}       // ctrl+space to see interfaces
 // // Duck typing in action. myBook contains all keys (and more) of the Interface
