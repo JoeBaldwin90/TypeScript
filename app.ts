@@ -1,5 +1,5 @@
 import { Category } from './enums';
-import { Book } from './interfaces';
+import { Book, DamageLogger } from './interfaces';
 
 // Returned array type is declared by the imported interface
 function GetAllBooks(): Book[] {
@@ -156,12 +156,16 @@ let myBook = {
     category: Category.Fiction,             // Imported Category type from enum
     year: '1813',
     pages: 376,
-    markDamaged: (reason: string) => console.log(`Damaged: ${reason}`)
+    markDamaged: (reason: string) => console.log(`Damage reported: ${reason}`)
     
 }
 
-PrintBook(myBook);
-myBook.markDamaged('Spine glue failed')
+let logDamage: DamageLogger;
+logDamage = (damage: string) => console.log(`Damage reported: ${damage}`);
+logDamage('Coffee stain')
+
+// PrintBook(myBook);
+// myBook.markDamaged('Torn pages')
 
 // // Overload string
 // let joesBooks = GetTitles('joe bloggs')

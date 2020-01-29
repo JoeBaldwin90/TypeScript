@@ -143,10 +143,13 @@ var myBook = {
     category: enums_1.Category.Fiction,
     year: '1813',
     pages: 376,
-    markDamaged: function (reason) { return console.log("Damaged: " + reason); }
+    markDamaged: function (reason) { return console.log("Damage reported: " + reason); }
 };
-PrintBook(myBook);
-myBook.markDamaged('Spine glue failed');
+var logDamage;
+logDamage = function (damage) { return console.log("Damage reported: " + damage); };
+logDamage('Coffee stain');
+// PrintBook(myBook);
+// myBook.markDamaged('Torn pages')
 // // Overload string
 // let joesBooks = GetTitles('joe bloggs')
 // joesBooks.forEach(title => console.log(title));
