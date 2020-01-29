@@ -147,7 +147,8 @@ function PrintBook(book: Book): void {
 
 // *******************************
 
-let favoriteAuthor: Author = {}
+// let favoriteAuthor: Author = {}             // ctrl+space to see interfaces
+// let favoriteLibrarian: Librarian = {}       // ctrl+space to see interfaces
 
 // // Duck typing in action. myBook contains all keys (and more) of the Interface
 // let myBook = {

@@ -134,7 +134,8 @@ function PrintBook(book) {
     console.log(book.title + " by " + book.author);
 }
 // *******************************
-var favoriteAuthor = {};
+// let favoriteAuthor: Author = {}             // ctrl+space to see interfaces
+// let favoriteLibrarian: Librarian = {}       // ctrl+space to see interfaces
 // // Duck typing in action. myBook contains all keys (and more) of the Interface
 // let myBook = {
 //     id: 5,
