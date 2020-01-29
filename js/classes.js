@@ -9,4 +9,16 @@ var UniversityLibrarian = /** @class */ (function () {
     return UniversityLibrarian;
 }());
 exports.UniversityLibrarian = UniversityLibrarian;
+var ReferenceItem = /** @class */ (function () {
+    function ReferenceItem(newTitle, newYear) {
+        console.log('Creating new reference item');
+        this.title = newTitle;
+        this.year = newYear;
+    }
+    ReferenceItem.prototype.printItem = function () {
+        console.log(this.title + " was published in " + this.year);
+    };
+    return ReferenceItem;
+}());
+exports.ReferenceItem = ReferenceItem;
 //# sourceMappingURL=classes.js.map

@@ -135,9 +135,13 @@ function PrintBook(book) {
     console.log(book.title + " by " + book.author);
 }
 // *******************************
-var favoriteLibrarian = new classes_1.UniversityLibrarian();
-favoriteLibrarian.name = 'Sharon';
-favoriteLibrarian.assistCustomer('Joe');
+var item = new classes_1.ReferenceItem();
+item.title = 'Dune';
+item.year = 1972;
+item.printItem();
+// let favoriteLibrarian: Librarian = new UniversityLibrarian();
+// favoriteLibrarian.name = 'Sharon';
+// favoriteLibrarian.assistCustomer('Joe');
 // let favoriteAuthor: Author = {}             // ctrl+space to see interfaces
 // let favoriteLibrarian: Librarian = {}       // ctrl+space to see interfaces
 // // Duck typing in action. myBook contains all keys (and more) of the Interface
