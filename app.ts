@@ -1,5 +1,5 @@
 import { Category } from './enums';
-import { Book, DamageLogger } from './interfaces';
+import { Book, DamageLogger, Person, Author, Librarian } from './interfaces';
 
 // Returned array type is declared by the imported interface
 function GetAllBooks(): Book[] {
@@ -147,22 +147,24 @@ function PrintBook(book: Book): void {
 
 // *******************************
 
-// Duck typing in action. myBook contains all keys (and more) of the Interface
-let myBook = {
-    id: 5,
-    title: `Lillith's Brood`,
-    author: 'Octavia Butler',
-    available: true,
-    category: Category.Fiction,             // Imported Category type from enum
-    year: '1813',
-    pages: 376,
-    markDamaged: (reason: string) => console.log(`Damage reported: ${reason}`)
-    
-}
+let favoriteAuthor: Author = {}
 
-let logDamage: DamageLogger;
-logDamage = (damage: string) => console.log(`Damage reported: ${damage}`);
-logDamage('Coffee stain')
+// // Duck typing in action. myBook contains all keys (and more) of the Interface
+// let myBook = {
+//     id: 5,
+//     title: `Lillith's Brood`,
+//     author: 'Octavia Butler',
+//     available: true,
+//     category: Category.Fiction,             // Imported Category type from enum
+//     year: '1813',
+//     pages: 376,
+//     markDamaged: (reason: string) => console.log(`Damage reported: ${reason}`)
+    
+// }
+
+// let logDamage: DamageLogger;
+// logDamage = (damage: string) => console.log(`Damage reported: ${damage}`);
+// logDamage('Coffee stain')
 
 // PrintBook(myBook);
 // myBook.markDamaged('Torn pages')

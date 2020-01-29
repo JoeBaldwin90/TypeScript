@@ -134,20 +134,21 @@ function PrintBook(book) {
     console.log(book.title + " by " + book.author);
 }
 // *******************************
-// Duck typing in action. myBook contains all keys (and more) of the Interface
-var myBook = {
-    id: 5,
-    title: "Lillith's Brood",
-    author: 'Octavia Butler',
-    available: true,
-    category: enums_1.Category.Fiction,
-    year: '1813',
-    pages: 376,
-    markDamaged: function (reason) { return console.log("Damage reported: " + reason); }
-};
-var logDamage;
-logDamage = function (damage) { return console.log("Damage reported: " + damage); };
-logDamage('Coffee stain');
+var favoriteAuthor = {};
+// // Duck typing in action. myBook contains all keys (and more) of the Interface
+// let myBook = {
+//     id: 5,
+//     title: `Lillith's Brood`,
+//     author: 'Octavia Butler',
+//     available: true,
+//     category: Category.Fiction,             // Imported Category type from enum
+//     year: '1813',
+//     pages: 376,
+//     markDamaged: (reason: string) => console.log(`Damage reported: ${reason}`)
+// }
+// let logDamage: DamageLogger;
+// logDamage = (damage: string) => console.log(`Damage reported: ${damage}`);
+// logDamage('Coffee stain')
 // PrintBook(myBook);
 // myBook.markDamaged('Torn pages')
 // // Overload string
