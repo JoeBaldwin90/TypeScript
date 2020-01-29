@@ -10,10 +10,10 @@ var UniversityLibrarian = /** @class */ (function () {
 }());
 exports.UniversityLibrarian = UniversityLibrarian;
 var ReferenceItem = /** @class */ (function () {
-    function ReferenceItem(newTitle, newYear) {
+    function ReferenceItem(title, year) {
+        this.title = title;
+        this.year = year;
         console.log('Creating new reference item');
-        this.title = newTitle;
-        this.year = newYear;
     }
     ReferenceItem.prototype.printItem = function () {
         console.log(this.title + " was published in " + this.year);

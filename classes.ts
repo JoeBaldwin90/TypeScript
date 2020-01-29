@@ -19,13 +19,8 @@ class UniversityLibrarian implements Librarian {
 }
 
 class ReferenceItem {
-    title: string;
-    year: number;
-
-    constructor(newTitle: string, newYear: number) {               
+    constructor(public title: string, private year: number) {               
         console.log('Creating new reference item');   
-        this.title = newTitle;
-        this.year = newYear;
     }
 
     printItem(): void {

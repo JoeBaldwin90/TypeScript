@@ -147,9 +147,7 @@ function PrintBook(book: Book): void {
 
 // *******************************
 
-let item = new ReferenceItem();
-item.title = 'Dune'
-item.year = 1972
+let item = new ReferenceItem('Dune', 1965);
 item.printItem();
 
 // let favoriteLibrarian: Librarian = new UniversityLibrarian();

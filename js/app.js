@@ -135,9 +135,7 @@ function PrintBook(book) {
     console.log(book.title + " by " + book.author);
 }
 // *******************************
-var item = new classes_1.ReferenceItem();
-item.title = 'Dune';
-item.year = 1972;
+var item = new classes_1.ReferenceItem('Dune', 1965);
 item.printItem();
 // let favoriteLibrarian: Librarian = new UniversityLibrarian();
 // favoriteLibrarian.name = 'Sharon';
