@@ -1,6 +1,6 @@
 import { Category } from './enums';
 import { Book, DamageLogger, Person, Author, Librarian } from './interfaces';
-import { UniversityLibrarian, ReferenceItem } from './classes';
+import { UniversityLibrarian, ReferenceItem, Encyclopedia } from './classes';
 
 // Returned array type is declared by the imported interface
 function GetAllBooks(): Book[] {
@@ -147,8 +147,11 @@ function PrintBook(book: Book): void {
 
 // *******************************
 
-let item = new ReferenceItem('Dune', 1965);
-item.printItem();
+let refBook = new Encyclopedia("Brittanica", 1990, 1.2);
+refBook.printItem();
+
+// let item = new ReferenceItem('Dune', 1965);
+// item.printItem();
 
 // let favoriteLibrarian: Librarian = new UniversityLibrarian();
 // favoriteLibrarian.name = 'Sharon';

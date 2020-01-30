@@ -135,8 +135,10 @@ function PrintBook(book) {
     console.log(book.title + " by " + book.author);
 }
 // *******************************
-var item = new classes_1.ReferenceItem('Dune', 1965);
-item.printItem();
+var refBook = new classes_1.Encyclopedia("Brittanica", 1990, 1.2);
+refBook.printItem();
+// let item = new ReferenceItem('Dune', 1965);
+// item.printItem();
 // let favoriteLibrarian: Librarian = new UniversityLibrarian();
 // favoriteLibrarian.name = 'Sharon';
 // favoriteLibrarian.assistCustomer('Joe');
