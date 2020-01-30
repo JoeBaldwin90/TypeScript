@@ -29,7 +29,7 @@ var ReferenceItem = /** @class */ (function () {
         console.log('Creating new reference item');
     }
     ReferenceItem.prototype.printItem = function () {
-        console.log(this.title + " was published in " + this.year + ".");
+        console.log("" + this.title);
     };
     return ReferenceItem;
 }());
@@ -42,8 +42,8 @@ var Encyclopedia = /** @class */ (function (_super) {
         return _this;
     }
     Encyclopedia.prototype.printItem = function () {
-        // super.printItem();                                 
-        console.log("Edition: " + this.edition);
+        _super.prototype.printItem.call(this);
+        console.log("Edition: " + this.edition + " (" + this.year + ")");
     };
     return Encyclopedia;
 }(ReferenceItem));
