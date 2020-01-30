@@ -147,8 +147,17 @@ function PrintBook(book: Book): void {
 
 // *******************************
 
-let refBook = new Encyclopedia("Brittanica", 1990, 1.2);
-refBook.printItem();
+let Newspaper = class extends ReferenceItem {
+    printCitation(): void {
+      console.log(`Newspaper: ${this.title}`)
+    }
+  }
+  
+  let myPaper = new Newspaper('The Gazzette', 2020);
+  myPaper.printCitation();
+
+// let refBook = new Encyclopedia("Brittanica", 1990, 1.2);
+// refBook.printItem();
 
 // let item = new ReferenceItem('Dune', 1965);
 // item.printItem();
